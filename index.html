@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Green - Alrawdah Green Sweet Water L.L.C</title>
+  <style>
+        @font-face {
+            font-family: 'Strenuous Regular';
+            src: url('Strenuous-Regular.woff2') format('woff2'), 
+                 url('Strenuous-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        :root {
+            --primary-green: #333333;
+            --dark-green: #333333;
+            --light-green: #648d49;
+            --dark-gray: #333333;
+            --medium-gray: #4d8c55;
+            --light-gray: #d1d3d4;
+            --secondary-blue: #325484;
+            --light-blue: #97ccee;
+            --secondary-beige: #f9edcd;
+            --white: #ffffff;
+        }
+
+
+        body {
+            font-family: 'Strenuous Regular', Arial, sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            padding: 1.2rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: padding 0.3s ease;
+        }
+
+
+        .navbar.scrolled {
+            padding: 0.8rem 2rem;
+        }
+
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .nav-left,
+        .nav-right {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            flex: 1;
+        }
+
+
+        .nav-left {
+            justify-content: flex-start;
+        }
+
+
+        .nav-right {
+            justify-content: flex-end;
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            flex: 0 0 auto;
+        }
+
+
+        .logo-img {
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+            transition: all 0.4s ease;
+            transform-origin: center;
+        }
+
+
+        .navbar.scrolled .logo-img {
+            height: 50px;
+            transform: fadeInUp 5s ease;
+        }
+
+
+        .nav-left a,
+        .nav-right a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+
+        .nav-left a:hover,
+        .nav-right a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+
+        /* Hero Section */
+        .hero {
+    background: linear-gradient(135deg, rgba(75, 104, 54, 0.109) 0%, rgba(59, 62, 58, 0.399) 100%),
+                url('bg.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 120px 20px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+        /* Falling Leaves */
+        .falling-leaves {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .falling-leaves span {
+            position: absolute;
+            top: -10%;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, rgba(100, 141, 73, 0.7) 0%, rgba(76, 140, 85, 0.6) 100%);
+            border-radius: 0 50% 50% 50%;
+            opacity: 0;
+            animation: fall 15s linear infinite;
+        }
+
+        .falling-leaves span:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 12s; }
+        .falling-leaves span:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 15s; width: 30px; height: 30px; }
+        .falling-leaves span:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 13s; }
+        .falling-leaves span:nth-child(4) { left: 40%; animation-delay: 1s; animation-duration: 16s; width: 25px; height: 25px; }
+        .falling-leaves span:nth-child(5) { left: 50%; animation-delay: 6s; animation-duration: 14s; }
+        .falling-leaves span:nth-child(6) { left: 60%; animation-delay: 3s; animation-duration: 12s; width: 32px; height: 32px; }
+        .falling-leaves span:nth-child(7) { left: 70%; animation-delay: 5s; animation-duration: 15s; }
+        .falling-leaves span:nth-child(8) { left: 80%; animation-delay: 7s; animation-duration: 13s; width: 28px; height: 28px; }
+        .falling-leaves span:nth-child(9) { left: 15%; animation-delay: 8s; animation-duration: 16s; }
+        .falling-leaves span:nth-child(10) { left: 85%; animation-delay: 2.5s; animation-duration: 14s; width: 33px; height: 33px; }
+        .falling-leaves span:nth-child(11) { left: 25%; animation-delay: 9s; animation-duration: 12s; }
+        .falling-leaves span:nth-child(12) { left: 65%; animation-delay: 4.5s; animation-duration: 15s; width: 29px; height: 29px; }
+
+        @keyframes fall {
+            0% {
+                opacity: 0;
+                transform: translateY(0) rotateZ(0deg) translateX(0);
+            }
+            10% {
+                opacity: 0.8;
+            }
+            75% {
+                opacity: 0.8;
+                transform: translateY(75vh) rotateZ(270deg) translateX(100px);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh) rotateZ(360deg) translateX(150px);
+            }
+        }
+
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: regular;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+
+        .btn {
+            padding: 16px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary-green);
+        }
+
+
+        .btn-primary:hover {
+            background: var(--light-gray);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 3px solid var(--white);
+        }
+
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-green);
+        }
+
+
+        /* Brands Showcase Section */
+        .brands-showcase {
+            padding: 100px 20px;
+            background: var(--white);
+        }
+
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        .brand-showcase-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            border: 3px solid transparent;
+        }
+
+
+        .brand-showcase-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(84, 132, 50, 0.2);
+            border-color: var(--primary-green);
+        }
+
+
+        .brand-logo {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+            margin: 0 auto 1.2rem;
+            display: block;
+        }
+
+
+        .brand-showcase-card h3 {
+            color: var(--primary-green);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+
+        .brand-showcase-card p {
+            color: var(--dark-gray);
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+
+        /* About Section */
+        .about {
+            padding: 100px 20px;
+            background: #f5f5f5;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-green);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+
+        .about-text h2 {
+            color: var(--dark-green);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+
+        .about-text p {
+            font-size: 1.15rem;
+            color: var(--dark-gray);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+
+        .about-highlight {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(84, 132, 50, 0.2);
+        }
+
+
+        .about-highlight h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+
+        .about-highlight ul {
+            list-style: none;
+        }
+
+
+        .about-highlight li {
+            padding: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+
+        .about-highlight li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+
+        /* Features Section */
+        .features {
+            padding: 100px 20px;
+            background: var(--white);
+        }
+
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+
+        .feature-card {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 5px solid var(--primary-green);
+        }
+
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 35px rgba(84, 132, 50, 0.25);
+        }
+
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+
+        .feature-card h3 {
+            color: var(--primary-green);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+
+        .feature-card p {
+            color: var(--dark-gray);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+
+        /* Products Gallery Section */
+        .product-gallery {
+            padding: 100px 20px;
+            background: #f5f5f5;
+        }
+
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+
+        .gallery-item {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.091);
+            transition: all 0.3s ease;
+        }
+
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(84, 132, 50, 0.25);
+        }
+
+
+        .gallery-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+
+        .gallery-caption {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f9f9f9 0%, #e9e9e9 100%);
+            text-align: center;
+        }
+
+
+        .gallery-caption h3 {
+            color: var(--primary-green);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+
+        .gallery-caption p {
+            color: var(--dark-gray);
+            font-size: 1rem;
+        }
+
+
+        /* Partners Section */
+        .partners {
+            padding: 60px 20px;
+            background: #f8f8f8;
+            overflow: hidden;
+        }
+
+
+        .partners .section-title {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+
+        .partners-slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+
+        .partners-track {
+            display: flex;
+            gap: 80px;
+            animation: scroll-left 30s linear infinite;
+            width: max-content;
+        }
+
+
+        .partners-track:hover {
+            animation-play-state: paused;
+        }
+
+
+        .partner-logo {
+            height: 80px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+
+        /* Footer */
+        .footer {
+            background: #2b2b2b;
+            color: var(--white);
+        }
+
+
+        .footer-main {
+            padding: 3rem 20px 2rem;
+        }
+
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1.2fr;
+            gap: 4rem;
+            align-items: start;
+            margin-bottom: 2rem;
+        }
+
+
+        .footer-column h4 {
+            color: var(--light-green);
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+
+        .footer-column p {
+            opacity: 0.85;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+
+        .footer-column a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.85;
+            transition: all 0.3s ease;
+        }
+
+
+        .footer-column a:hover {
+            opacity: 1;
+            color: var(--light-green);
+        }
+
+
+        .footer-phone {
+            font-size: 1.05rem !important;
+            font-weight: 600;
+            margin-bottom: 0.2rem !important;
+        }
+
+
+        .footer-address {
+            margin: 0.8rem 0 !important;
+        }
+
+
+        .footer-map {
+            margin-top: 0.8rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+
+        .footer-left {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-left,
+            .nav-right {
+                display: none;
+            }
+
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+
+            .products-grid,
+            .gallery-grid,
+            .brands-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+
+            .partner-logo {
+                height: 60px;
+                max-width: 140px;
+            }
+        }
+
+        .logo-img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    transition: all 0.4s ease, opacity 0.3s ease; /* Added opacity transition */
+    transform-origin: center;
+}
+
+
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        .hero-content {
+            animation: fadeInUp 1s ease;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-left">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#brands">Our Brands</a></li>
+                <li><a href="#features">Why us?</a></li>
+            </ul>
+            
+            <a href="#home" class="logo">
+                <img src="logo.png" alt="AR Green Logo" class="logo-img">
+            </a>
+            
+            <ul class="nav-right">
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#partners">Partners</a></li>
+            </ul>
+        </div>
+    </nav>
+
+       <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="falling-leaves">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="hero-content">
+            <h1>Pure Water, Pure Life</h1>
+            <p>Alrawdah Green Sweet Water L.L.C - Delivering premium quality drinking water since 2003. Trusted by thousands across the UAE for our unwavering commitment to purity and excellence.</p>
+            <div class="hero-buttons">
+                <a href="#brands" class="btn btn-primary">Explore Our Brands</a>
+                <a href="#about" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Brands Showcase Section -->
+    <section id="brands" class="brands-showcase">
+        <div class="container">
+            <h2 class="section-title">Our Premium Brands</h2>
+            <div class="brands-grid">
+                <div class="brand-showcase-card">
+                    <img src="AR-logo.png" alt="Alrawdah Springs Logo" class="brand-logo">
+                    <h3>Alrawdah Springs</h3>
+                    <p><strong>Shape Your Life</strong></p>
+                    <a href="#gallery" class="btn btn-primary">View Products</a>
+                </div>
+
+                <div class="brand-showcase-card">
+                    <img src="image.png" alt="Revana Logo" class="brand-logo">
+                    <h3>Revana</h3>
+                    <p><strong>The Rhythm Of Life™</strong></p>
+                    <a href="#contact" class="btn btn-primary">coming soon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Alrawdah Green</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Since 2003</h2>
+                    <p>
+                        Alrawdah Green Sweet Water L.L.C. is an Emirati company with local management, 
+                        specializing in the production and packaging of high-quality drinking water.
+                    </p>
+                    <p>
+                        Through our unwavering commitment to delivering pure and clean drinking water, 
+                        we have earned the trust of customers across the UAE. Our products meet the 
+                        highest international standards, ensuring quality and safety in every drop.
+                    </p>
+                    <p>
+                        We are currently expanding by developing and incorporating new brands under the 
+                        AR Green umbrella, including our flagship brands <strong>Alrawdah Springs</strong> 
+                        and <strong>Revana</strong>, reflecting our ambitious vision for growth in the water production sector.
+                    </p>
+                </div>
+                <div class="about-highlight">
+                    <h3>Our Commitment</h3>
+                    <ul>
+                        <li>Premium Quality Water Production</li>
+                        <li>International Standards Compliance</li>
+                        <li>Advanced Purification Technology</li>
+                        <li>Sustainable & Eco-Friendly Practices</li>
+                        <li>Local Emirati Management</li>
+                        <li>Trusted Since 2003</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose AR Green</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3>Pure Quality</h3>
+                    <p>Natural spring water sourced from protected underground springs, maintaining natural mineral composition and refreshing taste.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Certified Excellence</h3>
+                    <p>Meeting and exceeding international water quality standards with regular testing and quality control.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Sustainable</h3>
+                    <p>Committed to environmental responsibility through eco-friendly packaging and sustainable practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery Section -->
+    <section id="gallery" class="product-gallery">
+        <div class="container">
+            <h2 class="section-title">AR Green Product Range</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="rave.png" alt="Alrawdah Springs 12-pack bottles">
+                    <div class="gallery-caption">
+                        <h3>Glass Bottles</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="pic-03.png" alt="Alrawdah Springs 1.5L bottles pack">
+                    <div class="gallery-caption">
+                        <h3>PE Bottles</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="5g.png" alt="Alrawdah Springs variety pack">
+                    <div class="gallery-caption">
+                        <h3>5 Gallon Bottles</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="partners">
+        <div class="container">
+            <h2 class="section-title">Our Partners</h2>
+        </div>
+        <div class="partners-slider">
+            <div class="partners-track">
+                <img src="UAE Tennis Federation.png" alt="UAE Tennis Federation" class="partner-logo">
+                <img src="Ministry_of_Education_Ras_Al_Khaimah-removebg-preview.png" alt="Partner 2" class="partner-logo">
+                <img src="Ministry_of_Defense-removebg-preview.png" alt="Partner 3" class="partner-logo">
+                <img src="Emirates Red Crescent.png" alt="Partner 4" class="partner-logo">
+                <img src="Sharjah Coop.png" alt="Partner 5" class="partner-logo">
+                <img src="al.png" alt="Partner 6" class="partner-logo">
+                <img src="dubai.png" alt="Partner 7" class="partner-logo">
+                
+                <img src="UAE Tennis Federation.png" alt="UAE Tennis Federation" class="partner-logo">
+                <img src="Ministry_of_Education_Ras_Al_Khaimah-removebg-preview.png" alt="Partner 2" class="partner-logo">
+                <img src="Ministry_of_Defense-removebg-preview.png" alt="Partner 3" class="partner-logo">
+                <img src="Emirates Red Crescent.png" alt="Partner 4" class="partner-logo">
+                <img src="Sharjah Coop.png" alt="Partner 5" class="partner-logo">
+                <img src="al.png" alt="Partner 6" class="partner-logo">
+                <img src="dubai.png" alt="Partner 7" class="partner-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+    <div class="footer-main">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <p><a href="#home">Home</a></p>
+                    <p><a href="#brands">Our Brands</a></p>
+                    <p><a href="#about">About Us</a></p>
+                    <p><a href="#gallery">Gallery</a></p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p class="footer-phone">+971-7-222-8-999</p>
+                    <p class="footer-address">P.O. Box 5940<br>Ras Al Khaimah, UAE</p>
+                    <p><a href="mailto:info@rswater.ae">info@rswater.ae</a></p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>For Businesses</h4>
+                    <p>Interested in partnerships?</p>
+                    <p><a href="form.html" class="business-contact-link">Contact Us</a></p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Location</h4>
+                    <div class="footer-map">
+                        <a href="https://maps.app.goo.gl/p6UfdDGdD6xy6g1UA" target="_blank" style="display: block; width: 100%; height: 160px; border-radius: 8px; overflow: hidden;">
+                            <img src="map.png" alt="Map location" style="width: 100%; height: 100%; object-fit: cover; border: 0;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-left">
+                <p>Copyright © 2025 All Rights are reserved to Alrawdah Green Sweet Water L.L.C</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script>
+        // Logo animation on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        // Logo swap on scroll - swap once and keep until back to top
+let logoSwapped = false;
+
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    const logo = document.querySelector('.logo-img');
+    
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+        // Only swap if not already swapped
+        if (!logoSwapped) {
+            logo.src = 'logo2.png';
+            logoSwapped = true;
+        }
+    } else {
+        navbar.classList.remove('scrolled');
+        // Swap back to original only when at top
+        if (logoSwapped) {
+            logo.src = 'logo.png';
+            logoSwapped = false;
+        }
+    }
+});
+
+
+    </script>
+</body>
+</html>
